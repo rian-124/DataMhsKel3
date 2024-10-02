@@ -24,6 +24,7 @@
         </div>
 
         <p>Test jenskins</p>
+        <p>nyoba jenskins lah</p>
 
             <ul class="list-group">
                 <?php foreach ($data ['mhs'] as $mhs) :?>
