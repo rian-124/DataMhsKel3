@@ -52,7 +52,7 @@
 
 
       <div class="modal-body">
-        <form action="<?= BASEURL;?>/mahasiswa/tambah" method="post">
+        <form action="<?= BASEURL;?>/jurusan/tambahJurusan" method="post">
             <input type="hidden" id="id" name="id">
             <div class="mb-3">
                 <label for="username" class="mb-1">Username</label>
@@ -63,9 +63,9 @@
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 <select class="form-select" aria-label="Default select example" id="jurusan" name="jurusan">
-                    <option value="Teknik Informatika">Teknik Informatika</option>
-                    <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
-                    <option value="Teknik Mesin">Teknik Mesin</option>
+                    <?php foreach ($data['jrs'] as $jrs) : ?>
+                    <option value="<?= $jrs ['nama_jurusan']?>"><?= $jrs ['nama_jurusan']?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
       </div>

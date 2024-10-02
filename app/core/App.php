@@ -3,7 +3,7 @@
 
 class App {
 
-    protected $Controller = 'Home';
+    protected $Controller = 'Jurusan';
     protected $Method = 'index';
     protected $Params = [];
     public function __construct() 
