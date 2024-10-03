@@ -1,7 +1,7 @@
 <?php 
 
 
-class About extends Controller {
+class Dosen extends Controller {
 
     public function index ($nama  = 'nama', $status = 'status', $umur = 0) {
 
@@ -9,12 +9,7 @@ class About extends Controller {
         $data['status'] = $status;
         $data['umur'] = $umur;
         $this->view('templates/header');
-        $this->view ('about/index', $data);
-        $this->view('templates/footer');
-    }
-    public function page() {
-        $this->view('templates/header');
-        $this->view ('about/page');
+        $this->view ('dosen/index', $data);
         $this->view('templates/footer');
     }
 }

@@ -22,13 +22,22 @@
             </button>
         </div>
 
-            <ul class="list-group">
-                <?php foreach ($data['jrs'] as $jrs) : ?>
-                <li class="list-group-item">
-                    <?= $jrs['nama_jurusan']?>
-                </li>
-                <?php endforeach ?>
-            </ul>
+        <ul class="list-group">
+    <?php foreach ($data['jrs'] as $jrs) : ?>
+    <li class="list-group-item">
+        <?= $jrs['nama_jurusan'] ?>
+        <div class="d-flex justify-content-end align-items-end">
+            <a href="<?= BASEURL; ?>/jurusan/hapusJurusan/<?= $jrs['id']; ?>" 
+               class="btn btn-danger text-white me-2"
+               onclick="return confirm('Apakah Anda yakin ingin menghapus jurusan ini?');">
+               Delete
+            </a>
+        </div>
+    </li>
+    <?php endforeach ?>
+</ul>
+
+
             </div>
         </div>
     </div>

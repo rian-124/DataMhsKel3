@@ -36,5 +36,14 @@ Class Jurusan_Models {
         return $this->db->rowCount();
     }
 
+    public function hapusDataJurusan ($id) {
+        $query = "DELETE FROM " . $this->table . " WHERE id = :id";
+        $this->db->querry($query);
+        $this->db->bind('id', $id);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
     
 }

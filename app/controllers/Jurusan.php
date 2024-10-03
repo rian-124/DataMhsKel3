@@ -28,6 +28,19 @@ class Jurusan extends Controller {
         $this->view('jurusan/index', $data);
         $this->view('templates/footer');
     }
+
+    public function hapusJurusan($id) 
+    {
+        if($this->model('Jurusan_Models')->hapusDataJurusan($id) > 0 ) {
+            Flasher::setFlasher('berhasil', 'di hapus', 'success');
+            header('Location: ' . BASEURL . '/jurusan');
+            exit;
+        } else {
+            Flasher::setFlasher('gagal', 'di tambahkan', 'danger');
+            header('Location: ' . BASEURL . '/jurusan');
+            exit;
+        }
+    }
 }
 
 ?>
