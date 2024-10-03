@@ -23,16 +23,13 @@
             </button>
         </div>
 
-        <p>Test jenskins</p>
-        <p>nyoba jenskins lah</p>
-
             <ul class="list-group">
                 <?php foreach ($data ['mhs'] as $mhs) :?>
                 <li class="list-group-item">
                     <?= $mhs ['nama'];?>
                     <div class="d-flex justify-content-end align-items-center">
-                    <a href="" class="btn btn-danger text-white me-2" onclick="confirmDelete(<?= $mhs ['id'];?>, event)">Delete</a>
-                    <a href="" class="btn btn-success text-white me-2 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="<?= $mhs['id'];?>">Ubah</a>
+                    <a href="<?= BASEURL;?>/mahasiswa/hapus" class="btn btn-danger text-white me-2" onclick="confirmDeleteA(<?= $mhs ['id'];?>, event)">Delete</a>
+                    <a href="" class="btn btn-success text-white me-2  TampilPerubahan" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="<?= $mhs['id'];?>">Ubah</a>
                     <a href="<?= BASEURL;?>/mahasiswa/detail/<?= $mhs['id'];?>" class="btn btn-primary text-white me-2">Detail</a>
                     </div>
                 </li>
@@ -55,7 +52,7 @@
 
 
       <div class="modal-body">
-        <form action="<?= BASEURL;?>/jurusan/tambahJurusan" method="post">
+        <form action="<?= BASEURL;?>/mahasiswa/tambah" method="post">
             <input type="hidden" id="id" name="id">
             <div class="mb-3">
                 <label for="username" class="mb-1">Username</label>
@@ -82,3 +79,5 @@
     </div>
   </div>
 </div>
+
+
